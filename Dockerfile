@@ -6,5 +6,4 @@ RUN npm install -g nodemon
 COPY . .
 EXPOSE 3000
 RUN ls -la
-RUN chmod -R 777 /root
-CMD [ "npm", "run", "dev"]
+CMD [ "nodemon", "app"]
