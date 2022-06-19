@@ -23,6 +23,7 @@ jobs:
       - run:
           name: Run tests
           command: |
+            cp .env.examble .env
             docker-compose up -d
             sleep 10
             docker ps
