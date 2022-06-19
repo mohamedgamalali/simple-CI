@@ -25,7 +25,7 @@ jobs:
           command: |
             cp .env.examble .env
             docker-compose up -d
-            sleep 5
+            sleep 10
             ls -a
             docker exec -it circleci-web npm run test
       - store_artifacts:
