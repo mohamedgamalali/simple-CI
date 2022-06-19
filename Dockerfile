@@ -1,6 +1,6 @@
 FROM node:16.3.0-alpine
 WORKDIR /usr/app
-COPY package.json .
+COPY package*.json ./
 RUN npm i
 RUN npm install -g nodemon
 COPY . .
