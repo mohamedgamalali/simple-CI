@@ -39,7 +39,7 @@ module.exports = () => {
                 userName,
                 email
             });
-            const result = await user.save();
+            const result = await user.save(); 
             res.status(201).json({
                 message: 'User Created',
                 result: {
