@@ -27,7 +27,7 @@ jobs:
             docker-compose up -d
             sleep 5
             ls -a
-            docker exec -it dockerapp1-web npm run test
+            docker exec -it dockerapp1_web npm run test
       - store_artifacts:
           path: test-reports/
           destination: circle_test
