@@ -26,7 +26,7 @@ jobs:
             cp .env.examble .env
             docker-compose up -d
             sleep 5
-            ls
+            ls --all
             docker run dockerapp1_web npm run test
       - store_artifacts:
           path: test-reports/
