@@ -24,7 +24,7 @@ jobs:
           name: Run tests
           command: |
             cp .env.examble .env
-            docker-compose up
+            docker-compose up -d --build
             sleep 5
             ls -a
             docker exec -it dockerapp1-web npm run test
