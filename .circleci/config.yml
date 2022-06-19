@@ -24,7 +24,7 @@ jobs:
           command: |
             docker-compose up -d
             sleep 10
-            docker-compose run circleci-web npm run test
+            docker run circleci_web npm run test
       - store_artifacts:
           path: test-reports/
           destination: circle_test
