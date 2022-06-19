@@ -10,6 +10,6 @@ before(async () => {
             useUnifiedTopology: true
         })
         .then(async result => {
-            
+            console.log(result);
         }).catch(err => console.log(err));
 })

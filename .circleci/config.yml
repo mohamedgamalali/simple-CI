@@ -24,10 +24,10 @@ jobs:
           name: Run tests
           command: |
             cp .env.examble .env
-            docker-compose up -d
+            docker-compose up
             sleep 5
             ls -a
-            docker run dockerapp1_web npm run test
+            docker exec -it dockerapp1-web npm run test
       - store_artifacts:
           path: test-reports/
           destination: circle_test
