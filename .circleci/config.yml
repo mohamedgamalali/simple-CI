@@ -24,7 +24,7 @@ jobs:
           name: Run tests
           command: |
             cp .env.examble .env
-            docker-compose up -d
+            docker-compose up --build --remove-orphans
             sleep 20
             ls -a
             docker exec -it circleci-web npm run test
