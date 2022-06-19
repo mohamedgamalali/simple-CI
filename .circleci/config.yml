@@ -6,17 +6,24 @@ jobs:
       - image: docker:17.05.0-ce-git
     steps:
       - checkout
+      - restore_cache:
+          key: v1-deps-{{ checksum "package-lock.json" }}
       - setup_remote_docker
       - run:
           name: Install dependencies
           command: |
             apk add --no-cache py-pip=9.0.0-r1
             pip install docker-compose==1.15.0
+      - save_cache:
+          key: v1-deps-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
       - run:
           name: Run tests
           command: |
             docker-compose up -d
-            docker-compose run circleci-web npm run test
+            sleep 5
+            docker-compose run circleci_web npm run test
       - store_artifacts:
           path: test-reports/
           destination: circle_test
