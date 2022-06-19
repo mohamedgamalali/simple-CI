@@ -5,5 +5,4 @@ RUN npm i
 RUN npm install -g nodemon
 COPY . .
 EXPOSE 3000
-RUN ls -la
-CMD [ "nodemon", "app.js"]
+CMD [ "npm", "run", "dev"]
